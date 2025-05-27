@@ -14,6 +14,7 @@
       margin: 0 auto;
       border-collapse: collapse;
     }
+    
     td, th {
       padding: 10px;
       border: 1px solid #ccc;
@@ -22,11 +23,26 @@
       width: 80px;
       text-align: right;
     }
+    
     #result {
       margin-top: 20px;
       font-size: 1.2em;
       font-weight: bold;
     }
+
+    #food-buttons button {
+    margin: 0.3em;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #007AFF;
+    color: white;
+    cursor: pointer;
+  }
+  #food-buttons button:hover {
+  background-color: #005BBB;
+}
   </style>
 </head>
 <body>
@@ -49,6 +65,14 @@
       <td><input type="number" id="protein" value="0" oninput="calculateCalories()"></td>
     </tr>
   </table>
+
+  <h2>Lebensmittel hinzufügen</h2>
+  <div id="food-buttons">
+  <button onclick="addFood(0, 1, 24)">🍗 Hühnerbrust</button>
+  <button onclick="addFood(0, 5, 6)">🥚 Ei (1 Stk.)</button>
+  <button onclick="addFood(30, 1, 2)">🍚 Reis (100g)</button>
+  <button onclick="addFood(0, 10, 0)">🧈 Butter (10g)</button>
+  </div>
 
   <div id="result">Kalorien: 0 kcal</div>
 
@@ -88,6 +112,18 @@
     loadValues();
     calculateCalories(); // auch Kalorien berechnen
   };
+
+  function addFood(carbsAdd, fatAdd, proteinAdd) {
+  const carbsInput = document.getElementById('carbs');
+  const fatInput = document.getElementById('fat');
+  const proteinInput = document.getElementById('protein');
+
+  carbsInput.value = (parseFloat(carbsInput.value) || 0) + carbsAdd;
+  fatInput.value = (parseFloat(fatInput.value) || 0) + fatAdd;
+  proteinInput.value = (parseFloat(proteinInput.value) || 0) + proteinAdd;
+
+  calculateCalories(); // neu berechnen und speichern
+  }
 </script>
 </body>
 </html>
