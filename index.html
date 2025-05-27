@@ -73,13 +73,39 @@
   </table>
 
   <h2>Lebensmittel hinzufügen</h2>
-  <div id="food-buttons">
-  <button onclick="addFood(0, 1, 24)">🍗 100g Hühnerbrust</button>
-  <button onclick="addFood(0, 5, 6)">🥚 Ei (1 Stk.)</button>
-  <button onclick="addFood(30, 1, 2)">🍚 Reis (100g)</button>
-  <button onclick="addFood(0, 10, 0)">🧈 Butter (10g)</button>
-  <button onclick="reset()">reset</button>
-  </div>
+  <table>
+    <tr>
+      <th>Lebensmittel</th>
+      <th>Gramm</th>
+      <th>Carbs/100g</th>
+      <th>Farts/100g</th>
+      <th>Protein/100g</th>
+    </tr>
+    <tr>
+      <td>Hühnerbrust (g)</td>
+      <td><input type="number" id="huhn" value="0"></td>
+      <td><button onclick="addFood(0, 0.8, 24)"> add </button></td>
+      <td>0</td>
+      <td>0.8</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>Champignons (g)</td>
+      <td><input type="number" id="champignons" value="0"></td>
+      <td><button onclick="addFood(0.56, 0.25, 4.11)"> add </button></td>
+      <td>0.56</td>
+      <td>0.25</td>
+      <td>4.11</td>
+    </tr>
+    <tr>
+      <td>Neu (g)</td>
+      <td><input type="number" id="neu" value="0"></td>
+      <td><button onclick="addFood((parseFloat(document.getElementById('cn').value) || 0), (parseFloat(document.getElementById('fn').value) || 0), (parseFloat(document.getElementById('pn').value) || 0))"> add </button></td>
+      <td><input type="number" id="cn" value="0"></td>
+      <td><input type="number" id="fn" value="0"></td>
+      <td><input type="number" id="pn" value="0"></td>
+    </tr>
+  </table>
 
   <div id="result">Kalorien: 0 kcal</div>
 
