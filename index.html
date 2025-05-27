@@ -53,14 +53,41 @@
   <div id="result">Kalorien: 0 kcal</div>
 
   <script>
-    function calculateCalories() {
-      const carbs = parseFloat(document.getElementById('carbs').value) || 0;
-      const fat = parseFloat(document.getElementById('fat').value) || 0;
-      const protein = parseFloat(document.getElementById('protein').value) || 0;
+  function saveValues() {
+    const values = {
+      carbs: document.getElementById('carbs').value,
+      fat: document.getElementById('fat').value,
+      protein: document.getElementById('protein').value
+    };
+    localStorage.setItem('macroValues', JSON.stringify(values));
+  }
 
-      const calories = (carbs * 4) + (fat * 9) + (protein * 4);
-      document.getElementById('result').innerText = `Kalorien: ${calories.toFixed(2)} kcal`;
+  function loadValues() {
+    const saved = localStorage.getItem('macroValues');
+    if (saved) {
+      const values = JSON.parse(saved);
+      document.getElementById('carbs').value = values.carbs || 0;
+      document.getElementById('fat').value = values.fat || 0;
+      document.getElementById('protein').value = values.protein || 0;
     }
-  </script>
+  }
+
+  function calculateCalories() {
+    const carbs = parseFloat(document.getElementById('carbs').value) || 0;
+    const fat = parseFloat(document.getElementById('fat').value) || 0;
+    const protein = parseFloat(document.getElementById('protein').value) || 0;
+
+    const calories = (carbs * 4) + (fat * 9) + (protein * 4);
+    document.getElementById('result').innerText = `Kalorien: ${calories.toFixed(2)} kcal`;
+
+    saveValues(); // Speichern bei jeder Änderung
+  }
+
+  // Beim Laden der Seite gespeicherte Werte abrufen
+  window.onload = () => {
+    loadValues();
+    calculateCalories(); // auch Kalorien berechnen
+  };
+</script>
 </body>
 </html>
