@@ -56,7 +56,7 @@
       <td>Kohlenhydrate (g)</td>
       <td><input type="number" id="carbs" value="0" oninput="calculateCalories()"></td>
       <td><input type="number" id="addcarbs" value="0"></td>
-      <td><button onclick="addFood(document.getElementById('addcarbs').value, 0, 0)"> add </button></td>
+      <td><button onclick="addFood((parseFloat(document.getElementById('addcarbs').value) || 0), 0, 0)"> add </button></td>
     </tr>
     <tr>
       <td>Fett (g)</td>
