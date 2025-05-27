@@ -61,10 +61,14 @@
     <tr>
       <td>Fett (g)</td>
       <td><input type="number" id="fat" value="0" oninput="calculateCalories()"></td>
+      <td><input type="number" id="addfat" value="0"></td>
+      <td><button onclick="addFood(0, (parseFloat(document.getElementById('addfat').value) || 0), 0)"> add </button></td>
     </tr>
     <tr>
       <td>Eiweiß (g)</td>
       <td><input type="number" id="protein" value="0" oninput="calculateCalories()"></td>
+      <td><input type="number" id="addprotein" value="0"></td>
+      <td><button onclick="addFood(0, 0, (parseFloat(document.getElementById('addprotein').value) || 0))"> add </button></td>
     </tr>
   </table>
 
@@ -74,6 +78,7 @@
   <button onclick="addFood(0, 5, 6)">🥚 Ei (1 Stk.)</button>
   <button onclick="addFood(30, 1, 2)">🍚 Reis (100g)</button>
   <button onclick="addFood(0, 10, 0)">🧈 Butter (10g)</button>
+  <button onclick="reset()">reset</button>
   </div>
 
   <div id="result">Kalorien: 0 kcal</div>
@@ -125,6 +130,14 @@
   proteinInput.value = (parseFloat(proteinInput.value) || 0) + proteinAdd;
 
   calculateCalories(); // neu berechnen und speichern
+  }
+
+  function reset() {
+    carbsInput.value = 0;
+    fatInput.value = 0;
+    proteinInput.value = 0;
+
+    calculateCalories(); 
   }
 </script>
 </body>
