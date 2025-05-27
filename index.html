@@ -84,7 +84,7 @@
     <tr>
       <td>Hühnerbrust (g)</td>
       <td><input type="number" id="huhn" value="0"></td>
-      <td><button onclick="addFood(0, 0.8, 24)"> add </button></td>
+      <td><button onclick="addFood2((parseFloat(document.getElementById('huhn').value) || 0), 0, 0.8, 24)"> add </button></td>
       <td>0</td>
       <td>0.8</td>
       <td>24</td>
@@ -92,7 +92,7 @@
     <tr>
       <td>Champignons (g)</td>
       <td><input type="number" id="champignons" value="0"></td>
-      <td><button onclick="addFood(0.56, 0.25, 4.11)"> add </button></td>
+      <td><button onclick="addFood2((parseFloat(document.getElementById('champignons').value) || 0),0.56, 0.25, 4.11)"> add </button></td>
       <td>0.56</td>
       <td>0.25</td>
       <td>4.11</td>
@@ -100,7 +100,7 @@
     <tr>
       <td>Neu (g)</td>
       <td><input type="number" id="neu" value="0"></td>
-      <td><button onclick="addFood((parseFloat(document.getElementById('cn').value) || 0), (parseFloat(document.getElementById('fn').value) || 0), (parseFloat(document.getElementById('pn').value) || 0))"> add </button></td>
+      <td><button onclick="addFood2((parseFloat(document.getElementById('neu').value) || 0), (parseFloat(document.getElementById('cn').value) || 0), (parseFloat(document.getElementById('fn').value) || 0), (parseFloat(document.getElementById('pn').value) || 0))"> add </button></td>
       <td><input type="number" id="cn" value="0"></td>
       <td><input type="number" id="fn" value="0"></td>
       <td><input type="number" id="pn" value="0"></td>
@@ -156,6 +156,10 @@
   proteinInput.value = (parseFloat(proteinInput.value) || 0) + proteinAdd;
 
   calculateCalories(); // neu berechnen und speichern
+  }
+
+  function addFood2(multi, carbsAdd, fatAdd, proteinAdd) {
+    addFood(multi*carbsAdd,multi*fatAdd,multi*proteinAdd);
   }
 
   function reset() {
