@@ -77,7 +77,7 @@
     const fat = parseFloat(document.getElementById('fat').value) || 0;
     const protein = parseFloat(document.getElementById('protein').value) || 0;
 
-    const calories = (carbs * 4) + (fat * 9) + (protein * 4);
+    const calories = (carbs * 4.1) + (fat * 9.3) + (protein * 4.1);
     document.getElementById('result').innerText = `Kalorien: ${calories.toFixed(2)} kcal`;
 
     saveValues(); // Speichern bei jeder Änderung
