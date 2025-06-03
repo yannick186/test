@@ -57,6 +57,7 @@
       <td><input type="number" id="carbs" value="0" oninput="calculateCalories()"></td>
       <td><input type="number" id="addcarbs" value="0"></td>
       <td><button onclick="addFood((parseFloat(document.getElementById('addcarbs').value) || 0), 0, 0)"> add </button></td>
+      <td><button onclick="reset()"> clear </button></td>
     </tr>
     <tr>
       <td>Fett (g)</td>
@@ -97,6 +98,22 @@
       <td>0.56</td>
       <td>0.25</td>
       <td>4.11</td>
+    </tr>
+    <tr>
+      <td>Huhn Gericht</td>
+      <td><input type="text" id="schnetzel" value="5gÖl,400gHuhn,250gPilz,100gSahne,100gMilch"></td>
+      <td><button onclick="addFood2(100,9.3, 40.3, 112.2)"> add </button></td>
+      <td>9.3</td>
+      <td>40.3</td>
+      <td>112.2</td>
+    </tr>
+    <tr>
+      <td>Hack Gericht</td>
+      <td><input type="text" id="schnetzel" value="360gHack,3+1Soja,1sesam,1auster,2zucker,150gpaprika,5gÖl,1stärke"></td>
+      <td><button onclick="addFood2(100,30, 29, 75.6)"> add </button></td>
+      <td>9.3</td>
+      <td>40.3</td>
+      <td>112.2</td>
     </tr>
     <tr>
       <td><input type="text" id="n11" value=""></td>
@@ -207,6 +224,7 @@
 
     calculateCalories(); 
   }
+
 </script>
 </body>
 </html>
