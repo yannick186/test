@@ -92,20 +92,28 @@
       <td>24</td>
     </tr>
     <tr>
-      <td>Shake (g)</td>
-      <td><input type="number" id="shake" value="0"></td>
-      <td><button onclick="addFood2(100,20, 6.9, 33.9)"> add </button></td>
-      <td>20</td>
-      <td>6.9</td>
-      <td>33.9</td>
+      <td>Erdbeeren</td>
+      <td><input type="number" id="erbeere" value="0"></td>
+      <td><button onclick="addFood2((parseFloat(document.getElementById('erbeere').value) || 0), 7, 0.4, 0.7)"> add </button></td>
+      <td>7</td>
+      <td>0.4</td>
+      <td>0.7</td>
     </tr>
     <tr>
-      <td>Bami Goreng (g)</td>
-      <td><input type="number" id="ramen" value="0"></td>
-      <td><button onclick="addFood2((parseFloat(document.getElementById('ramen').value) || 0),62, 21, 9)"> add </button></td>
-      <td>62</td>
-      <td>21</td>
-      <td>9</td>
+      <td>trauben</td>
+      <td><input type="number" id="trauben" value="0"></td>
+      <td><button onclick="addFood2((parseFloat(document.getElementById('trauben').value) || 0), 16, 0.3, 0.7)"> add </button></td>
+      <td>16</td>
+      <td>0.3</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <td>banane</td>
+      <td><input type="number" id="banane" value="0"></td>
+      <td><button onclick="addFood2((parseFloat(document.getElementById('banane').value) || 0), 23, 0.2, 1)"> add </button></td>
+      <td>23</td>
+      <td>0.2</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Huhn Gericht</td>
@@ -236,3 +244,4 @@
 </script>
 </body>
 </html>
+
